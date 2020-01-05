@@ -241,13 +241,15 @@ gboolean image_draw(GtkWidget *widget, cairo_t *cr, thread_data *t_data) {
 		if (alloc.height < lastest_i_data->h)
 			alloc.height = lastest_i_data->h;
 	} else {
-		if (t_data->roate_degree / G_PI != 0) {
+		if (t_data->roate_degree != G_PI && t_data->roate_degree != 0 && t_data->roate_degree !=-1.* G_PI) {
 			if (alloc.width > alloc.height) {
+				//+-90 +-270 degree
 				scale = (gdouble) alloc.height / lastest_i_data->w;
 			} else {
 				scale = (gdouble) alloc.width / lastest_i_data->h;
 			};
 		} else {
+			//0 +-180 degree
 			if (alloc.width > alloc.height) {
 				scale = (gdouble) alloc.height / lastest_i_data->h;
 			} else {
@@ -386,12 +388,12 @@ void frame_size_changed_cb(GtkComboBox *widget, thread_data *t_data) {
 }
 void rotate_left_cb(GtkButton *button, thread_data *t_data) {
 	g_print("%s\n", __func__);
-	t_data->roate_degree -= G_PI / 2;
+	t_data->roate_degree -= G_PI / 2.;
 	if(t_data->roate_degree==2.*G_PI||t_data->roate_degree==-2.*G_PI)t_data->roate_degree=0;
 }
 void rotate_right_cb(GtkButton *button, thread_data *t_data) {
 	g_print("%s\n", __func__);
-	t_data->roate_degree += G_PI / 2;
+	t_data->roate_degree += G_PI / 2.;
 	if(t_data->roate_degree==2.*G_PI||t_data->roate_degree==-2.*G_PI)t_data->roate_degree=0;
 }
 
