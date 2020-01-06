@@ -470,7 +470,6 @@ int main(int argc, char *argv[]) {
 
 	current_image = NULL;
 	GAsyncQueue *convert_queue, *draw_queue;
-
 	thread_data *t_data = calloc(1, sizeof(thread_data));
 	t_data->normal_size = TRUE;
 	if(device_path==NULL)device_path=g_strdup("/dev/video0");
