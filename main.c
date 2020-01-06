@@ -381,7 +381,8 @@ void frame_size_changed_cb(GtkComboBox *widget, thread_data *t_data) {
 		}
 		t_data->cam->current_frm = id;
 		my_camera_stop_capture(t_data->cam);
-		my_camera_start_capture(t_data->cam);
+		if(gtk_toggle_button_get_active(ui->start))
+			my_camera_start_capture(t_data->cam);
 	}
 	t_data->restart_camera = FALSE;
 	g_mutex_unlock(&t_data->lock);
