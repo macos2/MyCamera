@@ -3,6 +3,8 @@
  *
  *  Created on: 2019年12月12日
  *      Author: tom
+ *      https://github.com/macos2/MyCamera
+ *		https://gitee.com/macos2/MyCamera
  */
 
 #ifndef VIDEO_UNIT_H_

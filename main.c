@@ -3,6 +3,8 @@
  *
  *  Created on: 2019年12月29日
  *      Author: tom
+ *      https://github.com/macos2/MyCamera
+ *		https://gitee.com/macos2/MyCamera
  */
 
 #include <stdio.h>
